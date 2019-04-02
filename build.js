@@ -419,12 +419,12 @@ const program = () => {
       aggregate(tgtRepo, apiGroup, agg);
     }
   });
-  fs.writeFileSync('firefox.raw.json', JSON.stringify(agg, null, 2));
+  fs.writeFileSync('ffext.raw.json', JSON.stringify(agg, null, 2));
   const result = convertRoot(agg);
   if(goShrink) {
-    fs.writeFileSync('firefox-webextensions.min.json', JSON.stringify(result));
+    fs.writeFileSync('ffext.min.json', JSON.stringify(result));
   }
-  fs.writeFileSync('firefox.json', JSON.stringify(result, null, 2));
+  fs.writeFileSync('ffext.json', JSON.stringify(result, null, 2));
 };
 
 program();

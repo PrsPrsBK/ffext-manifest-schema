@@ -1,5 +1,5 @@
 {
-  "name": "firefox-webextensions-manifest-schema",
+  "name": "ffext-manifest-schema",
   "description": "JSON schema for Firefox WebExtensions manifest.",
   "version": "0.1.0",
   "author": "PrsPrsBK",
@@ -7,7 +7,7 @@
     "strip-json-comments": "^2.0.1"
   },
   "files": [
-    "firefox-webextensions.min.json",
+    "ffext.min.json",
     "README.md",
     "defs/which_is_used.txt",
     "LICENSE/"
@@ -23,7 +23,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/PrsPrsBK/firefox-webextensions-manifest-schema"
+    "url": "https://github.com/PrsPrsBK/ffext-manifest-schema"
   },
   "scripts": {
     "build": "node build.js"

@@ -15,7 +15,7 @@ As for VS Code's workspace config, such as `foo.code-workspace`
       "json.schemas": [
         {
           "fileMatch": ["*/path/to/manifest.json"],
-          "url": "./path/to/firefox-webextensions.min.json",
+          "url": "./path/to/ffext.min.json",
         }
       ]
     }
