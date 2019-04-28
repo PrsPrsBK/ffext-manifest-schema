@@ -142,5 +142,6 @@ Both are in `License` directory.
 # Release Notes
 
 * 2019-04-02 0.1.0
+* 2019-04-28 0.2.0 `chrome_settings_overrides`: `search_url_get_params`, `suggest_url_get_params`, `search_form`
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
