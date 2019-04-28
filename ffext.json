@@ -121,7 +121,8 @@
     "ExtensionFileUrl": {
       "type": "string",
       "format": "strictRelativeUrl",
-      "pattern": "\\S"
+      "pattern": "\\S",
+      "description": "preprocess: localize"
     },
     "ImageDataOrExtensionURL": {
       "type": "string",
@@ -1407,7 +1408,7 @@
             },
             "suggest_url": {
               "type": "string",
-              "format": "url",
+              "pattern": "^https://.*$|^$",
               "description": "preprocess: localize"
             },
             "instant_url": {
@@ -1420,9 +1421,17 @@
               "format": "url",
               "description": "*deprecated!* Unsupported on Firefox at this time.\npreprocess: localize"
             },
+            "search_url_get_params": {
+              "type": "string",
+              "description": "GET parameters to the search_url as a query string.\npreprocess: localize"
+            },
             "search_url_post_params": {
               "type": "string",
               "description": "POST parameters to the search_url as a query string.\npreprocess: localize"
+            },
+            "suggest_url_get_params": {
+              "type": "string",
+              "description": "GET parameters to the suggest_url as a query string.\npreprocess: localize"
             },
             "suggest_url_post_params": {
               "type": "string",
@@ -1435,6 +1444,12 @@
             "image_url_post_params": {
               "type": "string",
               "description": "*deprecated!* Unsupported on Firefox at this time.\npreprocess: localize"
+            },
+            "search_form": {
+              "type": "string",
+              "format": "url",
+              "pattern": "^https://.*$",
+              "description": "preprocess: localize"
             },
             "alternate_urls": {
               "type": "array",
@@ -1491,7 +1506,7 @@
                   },
                   "value": {
                     "type": "string",
-                    "description": "A url parameter value."
+                    "description": "A url parameter value.\npreprocess: localize"
                   }
                 }
               },
