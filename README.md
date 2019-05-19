@@ -148,4 +148,6 @@ Both are in `License` directory.
 
   * `downloads.open`, `management`, `nativeMessaging`, `theme`, `webRequestBlocking`, `devtools`, `menus.overrideContext`, `activeTab`, `tabs`, `tabHide`
 
+* 2019-05-19 0.4.1 fix: again
+
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
