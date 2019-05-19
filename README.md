@@ -144,5 +144,8 @@ Both are in `License` directory.
 * 2019-04-02 0.1.0
 * 2019-04-28 0.2.0 `chrome_settings_overrides`: `search_url_get_params`, `suggest_url_get_params`, `search_form`
 * 2019-05-09 0.3.0 New `captivePortal` Api. Deleted `icons` of `ThemeType`.
+* 2019-05-19 0.4.0 fix: 10 permissions are not included.
+
+  * `downloads.open`, `management`, `nativeMessaging`, `theme`, `webRequestBlocking`, `devtools`, `menus.overrideContext`, `activeTab`, `tabs`, `tabHide`
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
