@@ -177,11 +177,25 @@ const aggregate = (rootDir, apiGroup, result) => {
                   result.properties[propName] = typ.properties[propName];
                 }
               }
+              else if(typ['$extend'] === 'OptionalPermission'
+                || typ['$extend'] === 'Permission') {
+                for(const p of typ.choices[0].enum) {
+                  if(result.definitions.permissionsList.enum.includes(p) === false) {
+                    result.definitions.permissionsList.enum.push(p);
+                  }
+                  else {
+                    console.log(`Permission ADD: WARN: dup at ${apiSpec.namespace}: ${p}`);
+                  }
+                }
+              }
               else if(typ.id) {
                 if(result.definitions[typ.id] !== undefined) {
                   console.log(`WARN: dup at ${apiSpec.namespace}`);
                 }
                 result.definitions[typ.id] = typ;
+              }
+              else {
+                console.log(`${JSON.stringify(typ)}`);
               }
             }
           }
@@ -385,9 +399,6 @@ const convertRoot = raw => {
   for(const key of Object.keys(result.properties)) {
     convertSub(result.properties[key], key, false);
   }
-  // result.definitions.Permission.oneOf[1].enum has initial 4 ones
-  // but do not have activeTab
-  result.definitions.Permission.oneOf[1].enum.push('activeTab');
   for(const perm of result.definitions.permissionsList.enum) {
     let wk = perm;
     if(perm.includes(':')) {
