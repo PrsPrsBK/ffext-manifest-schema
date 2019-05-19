@@ -12,6 +12,9 @@ const outputSpec = {
       permissionsList: {
         enum: [],
       },
+      optionalPermissionsList: {
+        enum: [],
+      },
     },
     properties: {
     },
@@ -177,14 +180,23 @@ const aggregate = (rootDir, apiGroup, result) => {
                   result.properties[propName] = typ.properties[propName];
                 }
               }
-              else if(typ['$extend'] === 'OptionalPermission'
-                || typ['$extend'] === 'Permission') {
+              else if(typ['$extend'] === 'Permission') {
                 for(const p of typ.choices[0].enum) {
                   if(result.definitions.permissionsList.enum.includes(p) === false) {
                     result.definitions.permissionsList.enum.push(p);
                   }
                   else {
-                    console.log(`Permission ADD: WARN: dup at ${apiSpec.namespace}: ${p}`);
+                    console.log(`Perm ADD: WARN: dup at ${apiSpec.namespace}: ${p}`);
+                  }
+                }
+              }
+              else if(typ['$extend'] === 'OptionalPermission') {
+                for(const p of typ.choices[0].enum) {
+                  if(result.definitions.optionalPermissionsList.enum.includes(p) === false) {
+                    result.definitions.optionalPermissionsList.enum.push(p);
+                  }
+                  else {
+                    console.log(`OptPerm ADD: WARN: dup at ${apiSpec.namespace}: ${p}`);
                   }
                 }
               }
@@ -409,6 +421,16 @@ const convertRoot = raw => {
     }
   }
   result.definitions.permissionsList = undefined;
+  for(const perm of result.definitions.optionalPermissionsList.enum) {
+    let wk = perm;
+    if(perm.includes(':')) {
+      wk = perm.slice(1 + perm.indexOf(':'));
+    }
+    if(result.definitions.OptionalPermission.enum.includes(wk) === false) {
+      result.definitions.OptionalPermission.enum.push(wk);
+    }
+  }
+  result.definitions.optionalPermissionsList = undefined;
   return result;
 };
 
