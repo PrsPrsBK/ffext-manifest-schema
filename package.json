@@ -16,7 +16,8 @@
     "Firefox",
     "Addon",
     "Extension",
-    "JSON schema"
+    "JSON schema",
+    "WebExtensions"
   ],
   "license": "MPL-2.0",
   "main": "index.js",
