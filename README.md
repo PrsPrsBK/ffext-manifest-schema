@@ -22,6 +22,12 @@ As for VS Code's workspace config, such as `foo.code-workspace`
   }
 ```
 
+Then you will get:
+
+![ManifestKey](images/Readme_ManifestKey.png)
+![Permission](images/Readme_Permission.png)
+
+
 ## how to make JSON Schema file
 
 ```console
