@@ -1,7 +1,7 @@
 * JSON Schema for Firefox WebExtensions.
-* for ones who want to catch up new versions.
+* for ones who want to catch up new versions. npm package is based on nightly (mozilla-central).
 * I do not think that this package is useful for Google Chrome's manifest.json, 
-  so this package is prefixed with 'firefox'.
+  so this package is prefixed as 'firefox'.
 * status: raughly O.K.
 
 
@@ -112,7 +112,7 @@ c.f. [Structuring a complex schema — Understanding JSON Schema 7.0 documentati
 ### 'match mode (?i)' of RegExp
 
 For the case of `string` type, it can have `pattern` keyword.
-JSON Schema does not handle it, and it results in RegExp error.
+JSON Schema does not handle it, and that results in RegExp error.
 
 
 # Reference
@@ -141,7 +141,7 @@ some useful staff.
 MPL-2.0.
 
 npm package includes json files. These contains contents which come from 
-json schema files of comm-central repository. 
+json schema files of mozilla-central repository. 
 Some ones are under 3-Clause BSD License, others are under MPL-2.0 License. 
 Both are in `License` directory.
 
