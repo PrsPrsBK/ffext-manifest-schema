@@ -1,7 +1,7 @@
 {
   "name": "ffext-manifest-schema",
   "description": "JSON schema for Firefox WebExtensions manifest.",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "author": "PrsPrsBK",
   "devDependencies": {
     "strip-json-comments": "^2.0.1"
