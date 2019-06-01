@@ -10,7 +10,9 @@
     "ffext.min.json",
     "README.md",
     "defs/which_is_used.txt",
-    "LICENSE/"
+    "LICENSE/",
+    "images/Readme_ManifestKey.png",
+    "images/Readme_Permission.png"
   ],
   "keywords": [
     "Firefox",
