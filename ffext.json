@@ -114,7 +114,8 @@
             "geckoProfiler",
             "search",
             "sessions",
-            "sidebar_action"
+            "sidebar_action",
+            "urlbar"
           ]
         }
       ]
