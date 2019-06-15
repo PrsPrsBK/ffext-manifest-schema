@@ -156,5 +156,6 @@ Both are in `License` directory.
 
 * 2019-05-19 0.4.1 fix: again
 * 2019-06-01 0.5.0 New: `urlbar` API
+* 2019-06-15 0.6.0 new `edge` property of `browser_specific_settings`
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
