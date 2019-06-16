@@ -150,12 +150,14 @@ Both are in `License` directory.
 * 2019-04-02 0.1.0
 * 2019-04-28 0.2.0 `chrome_settings_overrides`: `search_url_get_params`, `suggest_url_get_params`, `search_form`
 * 2019-05-09 0.3.0 New `captivePortal` Api. Deleted `icons` of `ThemeType`.
+  [1545159](https://bugzilla.mozilla.org/show_bug.cgi?id=1545159)
 * 2019-05-19 0.4.0 fix: 10 permissions are not included.
 
   * `downloads.open`, `management`, `nativeMessaging`, `theme`, `webRequestBlocking`, `devtools`, `menus.overrideContext`, `activeTab`, `tabs`, `tabHide`
 
 * 2019-05-19 0.4.1 fix: again
 * 2019-06-01 0.5.0 New: `urlbar` API
+  [1547285](https://bugzilla.mozilla.org/show_bug.cgi?id=1547285)
 * 2019-06-15 0.6.0 new `edge` property of `browser_specific_settings`
   [1542351](https://bugzilla.mozilla.org/show_bug.cgi?id=1542351)
 
