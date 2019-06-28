@@ -108,6 +108,7 @@
             "identity",
             "menus",
             "contextMenus",
+            "normandyAddonStudy",
             "omnibox",
             "page_action",
             "pkcs11",
