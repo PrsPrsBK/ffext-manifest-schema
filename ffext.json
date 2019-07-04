@@ -41,7 +41,6 @@
         "cookies",
         "downloads",
         "downloads.open",
-        "topSites",
         "webNavigation",
         "webRequest",
         "webRequestBlocking",
@@ -52,7 +51,8 @@
         "search",
         "activeTab",
         "tabs",
-        "tabHide"
+        "tabHide",
+        "topSites"
       ]
     },
     "OptionalPermissionOrOrigin": {
@@ -92,7 +92,6 @@
             "nativeMessaging",
             "telemetry",
             "theme",
-            "topSites",
             "user_scripts",
             "webNavigation",
             "webRequest",
@@ -116,6 +115,7 @@
             "search",
             "sessions",
             "sidebar_action",
+            "topSites",
             "urlbar"
           ]
         }

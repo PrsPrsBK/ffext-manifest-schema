@@ -162,5 +162,7 @@ Both are in `License` directory.
   [1542351](https://bugzilla.mozilla.org/show_bug.cgi?id=1542351)
 * 2019-06-28 0.7.0 New: normandyAddonStudy.json
   [1522214](https://bugzilla.mozilla.org/show_bug.cgi?id=1522214)
+* 2019-07-05 No Release
+  * `topSites` API moved from `toolkit/` to `browser`
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
