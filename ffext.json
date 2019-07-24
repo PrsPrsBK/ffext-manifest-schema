@@ -85,6 +85,7 @@
             "downloads",
             "idle",
             "management",
+            "networkStatus",
             "notifications",
             "optional_permissions",
             "privacy",
