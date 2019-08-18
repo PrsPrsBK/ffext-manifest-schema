@@ -166,5 +166,7 @@ Both are in `License` directory.
   * `topSites` API moved from `toolkit/` to `browser`
 * 2019-07-24 0.8.0 New: `networkStatus` permission
   [1550605](https://bugzilla.mozilla.org/show_bug.cgi?id=1550605)
+* 2019-08-19 0.9.0 New: `activityLog` permission
+  [1542403](https://bugzilla.mozilla.org/show_bug.cgi?id=1542403)
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
