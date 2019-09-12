@@ -168,5 +168,7 @@ Both are in `License` directory.
   [1550605](https://bugzilla.mozilla.org/show_bug.cgi?id=1550605)
 * 2019-08-19 0.9.0 New: `activityLog` permission
   [1542403](https://bugzilla.mozilla.org/show_bug.cgi?id=1542403)
+* 2019-09-12 0.10.0 New: `memory` permission
+  [1296898](https://bugzilla.mozilla.org/show_bug.cgi?id=1296898)
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
