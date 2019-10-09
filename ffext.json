@@ -86,7 +86,6 @@
             "activityLog",
             "idle",
             "management",
-            "memory",
             "networkStatus",
             "notifications",
             "optional_permissions",
