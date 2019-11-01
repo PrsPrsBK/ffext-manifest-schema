@@ -171,5 +171,7 @@ Both are in `License` directory.
 * 2019-09-12 0.10.0 New: `memory` permission
   [1296898](https://bugzilla.mozilla.org/show_bug.cgi?id=1296898)
 * 2019-10-09 0.11.0 Removal: `memory` permission
+* 2019-11-01 0.12.0 New: `OnClickData` (NO RELEASE)
+  [1405031](https://bugzilla.mozilla.org/show_bug.cgi?id=1405031)
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
