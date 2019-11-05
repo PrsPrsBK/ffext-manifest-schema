@@ -171,7 +171,9 @@ Both are in `License` directory.
 * 2019-09-12 0.10.0 New: `memory` permission
   [1296898](https://bugzilla.mozilla.org/show_bug.cgi?id=1296898)
 * 2019-10-09 0.11.0 Removal: `memory` permission
-* 2019-11-01 0.12.0 New: `OnClickData` (NO RELEASE)
+* 2019-11-01 (NO RELEASE) New: `OnClickData`
   [1405031](https://bugzilla.mozilla.org/show_bug.cgi?id=1405031)
+* 2019-11-04 0.12.0 Add: `content_security_policy` may be `{ "extension_pages":xxxx, "content_scripts":xxxx }`
+  [1581609](https://bugzilla.mozilla.org/show_bug.cgi?id=1581609)
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
