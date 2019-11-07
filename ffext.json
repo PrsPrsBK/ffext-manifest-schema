@@ -1143,6 +1143,12 @@
     "theme_experiment": {
       "$ref": "#/definitions/ThemeExperiment"
     },
+    "l10n_resources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "protocol_handlers": {
       "description": "A list of protocol handler definitions.",
       "type": "array",
