@@ -1242,7 +1242,7 @@
             },
             "favicon_url": {
               "type": "string",
-              "format": "url",
+              "format": "relativeUrl",
               "description": "preprocess: localize"
             },
             "suggest_url": {
