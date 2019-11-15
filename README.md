@@ -177,7 +177,7 @@ Both are in `License` directory.
   [1581609](https://bugzilla.mozilla.org/show_bug.cgi?id=1581609)
 * 2019-11-08 0.13.0 New property: `l10n_resources`
   [1457865](https://bugzilla.mozilla.org/show_bug.cgi?id=1457865)
-* 2019-11-16
+* 2019-11-16 0.14.0 
   Change: `chrome_settings_overrides`: `search_provider`: format of `favicon_url` changed from `url` to `relativeUrl`
   [1571110](https://bugzilla.mozilla.org/show_bug.cgi?id=1571110)
 
