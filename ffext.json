@@ -1330,7 +1330,7 @@
                   },
                   "pref": {
                     "type": "string",
-                    "description": "The preference to retreive the value from."
+                    "description": "The preference to retrieve the value from.\npreprocess: localize"
                   },
                   "purpose": {
                     "type": "string",
