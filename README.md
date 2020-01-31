@@ -183,6 +183,8 @@ Both are in `License` directory.
 * 2019-11-24 0.15.0
   Removal: `OnClickData` (fix for 2019-11-01 #1405031)
   [1595931](https://bugzilla.mozilla.org/show_bug.cgi?id=1595931)
+* 2020-01-31 0.16.0 New property: `isolated_world` of `content_security_policy`
+  [1594232](https://bugzilla.mozilla.org/show_bug.cgi?id=1594232)
 
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
