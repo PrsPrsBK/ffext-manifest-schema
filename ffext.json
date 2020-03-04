@@ -41,6 +41,7 @@
         "cookies",
         "downloads",
         "downloads.open",
+        "privacy",
         "webNavigation",
         "webRequest",
         "webRequestBlocking",
