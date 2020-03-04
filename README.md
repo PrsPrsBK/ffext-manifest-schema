@@ -185,6 +185,7 @@ Both are in `License` directory.
   [1595931](https://bugzilla.mozilla.org/show_bug.cgi?id=1595931)
 * 2020-01-31 0.16.0 New property: `isolated_world` of `content_security_policy`
   [1594232](https://bugzilla.mozilla.org/show_bug.cgi?id=1594232)
-
+* 2020-03-05 0.17.0 New permission: `privacy`
+  [1618399](https://bugzilla.mozilla.org/show_bug.cgi?id=1618399)
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
