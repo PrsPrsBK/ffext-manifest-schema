@@ -29,31 +29,43 @@
         "$ref": "#/definitions/UnrecognizedProperty"
       }
     },
-    "OptionalPermission": {
+    "OptionalPermissionNoPrompt": {
       "type": "string",
       "enum": [
-        "clipboardRead",
-        "clipboardWrite",
-        "geolocation",
-        "idle",
-        "notifications",
-        "browserSettings",
-        "cookies",
-        "downloads",
-        "downloads.open",
-        "privacy",
-        "webNavigation",
-        "webRequest",
-        "webRequestBlocking",
-        "bookmarks",
-        "find",
-        "history",
-        "menus.overrideContext",
-        "search",
-        "activeTab",
-        "tabs",
-        "tabHide",
-        "topSites"
+        "idle"
+      ]
+    },
+    "OptionalPermission": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/OptionalPermissionNoPrompt"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "clipboardRead",
+            "clipboardWrite",
+            "geolocation",
+            "notifications",
+            "browserSettings",
+            "downloads",
+            "downloads.open",
+            "management",
+            "privacy",
+            "proxy",
+            "webNavigation",
+            "bookmarks",
+            "browsingData",
+            "devtools",
+            "find",
+            "history",
+            "pkcs11",
+            "sessions",
+            "tabs",
+            "tabHide",
+            "topSites"
+          ]
+        }
       ]
     },
     "OptionalPermissionOrOrigin": {
@@ -66,7 +78,7 @@
         }
       ]
     },
-    "Permission": {
+    "PermissionNoPrompt": {
       "oneOf": [
         {
           "$ref": "#/definitions/OptionalPermission"
@@ -77,7 +89,23 @@
             "alarms",
             "mozillaAddons",
             "storage",
-            "unlimitedStorage",
+            "unlimitedStorage"
+          ]
+        }
+      ]
+    },
+    "Permission": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PermissionNoPrompt"
+        },
+        {
+          "$ref": "#/definitions/OptionalPermission"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "alarms",
             "browserSettings",
             "clipboardWrite",
             "contextualIdentities",
@@ -86,15 +114,14 @@
             "downloads",
             "activityLog",
             "idle",
-            "management",
             "networkStatus",
             "notifications",
             "optional_permissions",
             "privacy",
             "proxy",
             "nativeMessaging",
+            "storage",
             "telemetry",
-            "theme",
             "user_scripts",
             "webNavigation",
             "webRequest",
@@ -103,7 +130,6 @@
             "browsingData",
             "captivePortal",
             "commands",
-            "devtools",
             "devtools_page",
             "find",
             "history",
@@ -355,7 +381,7 @@
     },
     "ImageDetails": {
       "type": "object",
-      "description": "Details about the format and quality of an image.",
+      "description": "Details about the format, quality, area and scale of the capture.",
       "properties": {
         "format": {
           "$ref": "#/definitions/ImageFormat",
@@ -366,6 +392,28 @@
           "minimum": 0,
           "maximum": 100,
           "description": "When format is <code>\"jpeg\"</code>, controls the quality of the resulting image.  This value is ignored for PNG images.  As quality is decreased, the resulting image will have more visual artifacts, and the number of bytes needed to store it will decrease."
+        },
+        "rect": {
+          "type": "object",
+          "description": "The area of the document to capture, in CSS pixels, relative to the page.  If omitted, capture the visible viewport.",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            },
+            "width": {
+              "type": "number"
+            },
+            "height": {
+              "type": "number"
+            }
+          }
+        },
+        "scale": {
+          "type": "number",
+          "description": "The scale of the resulting image.  Defaults to <code>devicePixelRatio</code>."
         }
       }
     },
@@ -939,6 +987,15 @@
           "additionalProperties": {
             "$ref": "#/definitions/UnrecognizedProperty"
           }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "service_worker": {
+              "$ref": "#/definitions/ExtensionURL"
+            }
+          },
+          "postprocess": "requireBackgroundServiceWorkerEnabled"
         }
       ]
     },
@@ -1143,6 +1200,56 @@
         "$ref": "#/definitions/ProtocolHandler"
       }
     },
+    "telemetry": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/UnrecognizedProperty"
+      },
+      "properties": {
+        "ping_type": {
+          "type": "string"
+        },
+        "schemaNamespace": {
+          "type": "string"
+        },
+        "public_key": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "key": {
+              "type": "object",
+              "properties": {
+                "crv": {
+                  "type": "string",
+                  "optional": "false"
+                },
+                "kty": {
+                  "type": "string",
+                  "optional": "false"
+                },
+                "x": {
+                  "type": "string",
+                  "optional": "false"
+                },
+                "y": {
+                  "type": "string",
+                  "optional": "false"
+                }
+              }
+            }
+          }
+        },
+        "study_name": {
+          "type": "string"
+        },
+        "pioneer_id": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
     "user_scripts": {
       "type": "object",
       "properties": {
@@ -1218,13 +1325,25 @@
               "description": "preprocess: localize"
             },
             "keyword": {
-              "type": "string",
-              "description": "preprocess: localize"
+              "oneOf": [
+                {
+                  "type": "string",
+                  "description": "preprocess: localize"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "description": "preprocess: localize"
+                  },
+                  "minItems": 1
+                }
+              ]
             },
             "search_url": {
               "type": "string",
               "format": "url",
-              "pattern": "^https://.*$",
+              "pattern": "^(https://|http://(localhost|127\\.0\\.0\\.1|\\[::1\\])(:\\d*)?(/|$)).*$",
               "description": "preprocess: localize"
             },
             "favicon_url": {
@@ -1234,7 +1353,7 @@
             },
             "suggest_url": {
               "type": "string",
-              "pattern": "^https://.*$|^$",
+              "pattern": "^(https://|http://(localhost|127\\.0\\.0\\.1|\\[::1\\])(:\\d*)?(/|$)).*$",
               "description": "preprocess: localize"
             },
             "instant_url": {
@@ -1274,7 +1393,7 @@
             "search_form": {
               "type": "string",
               "format": "url",
-              "pattern": "^https://.*$",
+              "pattern": "^(https://|http://(localhost|127\\.0\\.0\\.1|\\[::1\\])(:\\d*)?(/|$)).*$",
               "description": "preprocess: localize"
             },
             "alternate_urls": {
