@@ -416,8 +416,11 @@ const convertRoot = raw => {
     if(perm.includes(':')) {
       wk = perm.slice(1 + perm.indexOf(':'));
     }
-    if(result.definitions.Permission.oneOf[1].enum.includes(wk) === false) {
-      result.definitions.Permission.oneOf[1].enum.push(wk);
+    if(!result.definitions.Permission.oneOf[2]) {
+      result.definitions.Permission.oneOf.push({ type: 'string', enum: [] });
+    }
+    if(result.definitions.Permission.oneOf[2].enum.includes(wk) === false) {
+      result.definitions.Permission.oneOf[2].enum.push(wk);
     }
   }
   result.definitions.permissionsList = undefined;
@@ -426,8 +429,8 @@ const convertRoot = raw => {
     if(perm.includes(':')) {
       wk = perm.slice(1 + perm.indexOf(':'));
     }
-    if(result.definitions.OptionalPermission.enum.includes(wk) === false) {
-      result.definitions.OptionalPermission.enum.push(wk);
+    if(result.definitions.OptionalPermission.oneOf[1].enum.includes(wk) === false) {
+      result.definitions.OptionalPermission.oneOf[1].enum.push(wk);
     }
   }
   result.definitions.optionalPermissionsList = undefined;
