@@ -188,4 +188,9 @@ Both are in `License` directory.
 * 2020-03-05 0.17.0 New permission: `privacy`
   [1618399](https://bugzilla.mozilla.org/show_bug.cgi?id=1618399)
 
+* 2020-10-26 0.18.0 very many changes from April To October. 
+
+  * Permission [1630413](https://bugzilla.mozilla.org/show_bug.cgi?id=1630413)
+  * OptionalPermission [1622917](https://bugzilla.mozilla.org/show_bug.cgi?id=1622917)
+
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
