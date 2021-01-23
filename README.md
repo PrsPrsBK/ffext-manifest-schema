@@ -193,4 +193,12 @@ Both are in `License` directory.
   * Permission [1630413](https://bugzilla.mozilla.org/show_bug.cgi?id=1630413)
   * OptionalPermission [1622917](https://bugzilla.mozilla.org/show_bug.cgi?id=1622917)
 
+* 2021-01-23 0.19.0
+
+  * Removal: `content_scripts` and `isolated_world` properties of `content_security_policy`
+    [1594234](https://bugzilla.mozilla.org/show_bug.cgi?id=1594234)
+  * Change: pattern of `suggest_url`of `search_provider` property of `chrome_settings_overrides`
+  [1687313](https://bugzilla.mozilla.org/show_bug.cgi?id=1687313)
+  (You may see "Access Denied - You are not authorized to access bug 1687313. To see this bug, you must first log in to an account with the appropriate permissions.")
+
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
