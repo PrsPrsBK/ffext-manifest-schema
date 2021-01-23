@@ -873,7 +873,8 @@
     "manifest_version": {
       "type": "number",
       "minimum": 2,
-      "maximum": 2
+      "maximum": 3,
+      "postprocess": "manifestVersionCheck"
     },
     "applications": {
       "type": "object",
@@ -1050,16 +1051,6 @@
               "type": "string",
               "format": "contentSecurityPolicy",
               "description": "The Content Security Policy used for extension pages."
-            },
-            "content_scripts": {
-              "type": "string",
-              "format": "contentSecurityPolicy",
-              "description": "The Content Security Policy used for content scripts."
-            },
-            "isolated_world": {
-              "type": "string",
-              "format": "contentSecurityPolicy",
-              "description": "An alias for content_scripts to support Chrome compatibility.  Content Security Policy implementations may differ between Firefox and Chrome.  If both isolated_world and content_scripts exist, the value from content_scripts will be used."
             }
           }
         }
@@ -1353,7 +1344,7 @@
             },
             "suggest_url": {
               "type": "string",
-              "pattern": "^(https://|http://(localhost|127\\.0\\.0\\.1|\\[::1\\])(:\\d*)?(/|$)).*$",
+              "pattern": "^$|^(https://|http://(localhost|127\\.0\\.0\\.1|\\[::1\\])(:\\d*)?(/|$)).*$",
               "description": "preprocess: localize"
             },
             "instant_url": {
