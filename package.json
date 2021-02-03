@@ -4,6 +4,7 @@
   "version": "0.19.0",
   "author": "PrsPrsBK",
   "devDependencies": {
+    "eslint": "^7.19.0",
     "strip-json-comments": "^3.0.1"
   },
   "files": [
@@ -29,6 +30,7 @@
     "url": "https://github.com/PrsPrsBK/ffext-manifest-schema"
   },
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "eslint": "eslint --color --ext=.js ."
   }
 }
