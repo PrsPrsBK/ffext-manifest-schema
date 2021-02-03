@@ -201,4 +201,6 @@ Both are in `License` directory.
   [1687313](https://bugzilla.mozilla.org/show_bug.cgi?id=1687313)
   (You may see "Access Denied - You are not authorized to access bug 1687313. To see this bug, you must first log in to an account with the appropriate permissions.")
 
+* 2021-02-03 0.19.1 fix: some permissions are not included, e.g. `activeTab`
+
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
