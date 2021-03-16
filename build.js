@@ -171,7 +171,7 @@ const aggregate = (rootDir, apiGroup, result) => {
         if(apiSpec.namespace === 'manifest'
           || apiSpec.namespace === 'experiments'
           || apiSpec.namespace === 'extensionTypes'
-          ) {
+        ) {
           if(apiSpec.types !== undefined) { // !define is common in specific apiGroup
             for(const typ of apiSpec.types) {
               if(typ['$extend'] === 'WebExtensionManifest') {
@@ -334,7 +334,7 @@ const convertSub = (tree, rootName, isDefinition) => {
           tree.description = `*deprecated!* \n${tree.description}`;
         }
         else {
-          tree.description = `*deprecated!*`;
+          tree.description = '*deprecated!*';
         }
       }
     }
@@ -403,7 +403,7 @@ const convertRoot = raw => {
       && key !== 'WebExtensionLangpackManifest'
       && key !== 'WebExtensionDictionaryManifest'
       && key !== 'ThemeManifest'
-      ) {
+    ) {
       result.definitions[key] = JSON.parse(JSON.stringify(raw.definitions[key]));
     }
   }
