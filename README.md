@@ -130,7 +130,7 @@ some useful staff.
 * [API Schemas — Mozilla Source Tree Docs 68.0a1 documentation](https://firefox-source-docs.mozilla.org/toolkit/components/extensions/webextensions/schema.html)
 
   This says "Refer to the documentation and examples at the JSON Schema site for details on how these items are defined in a schema".
-  But some items in API schema (e.g. `choices`) does not match with specs of all versions like 0.4 or 0.7 currently (2019 March) on that site.
+  But some items in API schema (e.g. `choices`) does not match with specs of all versions like 4.0 or 7.0 currently (2019 March) on that site.
 
 * mozilla-central (or mozilla-beta or so)'s `toolkit/components/extensions/Schemas.jsm`
 
