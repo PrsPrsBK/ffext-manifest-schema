@@ -208,5 +208,9 @@ Both are in `License` directory.
   * change: `nativeMessaging` became optional permission
     [1630415](https://bugzilla.mozilla.org/show_bug.cgi?id=1630415)
 
+* 2021-03-18 0.20.0 New: `ftp` for `protocol_handlers`
+
+    [1626365](https://bugzilla.mozilla.org/show_bug.cgi?id=1626365)
+
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
