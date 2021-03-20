@@ -1,0 +1,107 @@
+{
+  "title": "JSON schema for Firefox WebExtensions manifest file",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "manifest_version",
+    "name",
+    "version"
+  ],
+  "definitions": {
+    "HttpURL": {
+      "type": "string",
+      "format": "url",
+      "pattern": "^https?://.*$"
+    },
+    "ExtensionURL": {
+      "type": "string",
+      "format": "strictRelativeUrl"
+    },
+    "ProtocolHandler": {
+      "type": "object",
+      "description": "Represents a protocol handler definition.",
+      "properties": {
+        "name": {
+          "description": "A user-readable title string for the protocol handler. This will be displayed to the user in interface objects as needed.",
+          "type": "string"
+        },
+        "protocol": {
+          "description": "The protocol the site wishes to handle, specified as a string. For example, you can register to handle SMS text message links by registering to handle the \"sms\" scheme.",
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": [
+                "bitcoin",
+                "dat",
+                "dweb",
+                "ftp",
+                "geo",
+                "gopher",
+                "im",
+                "ipfs",
+                "ipns",
+                "irc",
+                "ircs",
+                "magnet",
+                "mailto",
+                "mms",
+                "news",
+                "nntp",
+                "sip",
+                "sms",
+                "smsto",
+                "ssb",
+                "ssh",
+                "tel",
+                "urn",
+                "webcal",
+                "wtai",
+                "xmpp"
+              ]
+            },
+            {
+              "type": "string",
+              "pattern": "^(ext|web)\\+[a-z0-9.+-]+$"
+            }
+          ]
+        },
+        "uriTemplate": {
+          "description": "The URL of the handler, as a string. This string should include \"%s\" as a placeholder which will be replaced with the escaped URL of the document to be handled. This URL might be a true URL, or it could be a phone number, email address, or so forth.\npreprocess: localize",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ExtensionURL"
+            },
+            {
+              "$ref": "#/definitions/HttpURL"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "properties": {
+    "manifest_version": {
+      "type": "number",
+      "minimum": 2,
+      "maximum": 3,
+      "postprocess": "manifestVersionCheck"
+    },
+    "name": {
+      "type": "string",
+      "optional": false,
+      "description": "preprocess: localize"
+    },
+    "version": {
+      "type": "string",
+      "optional": false
+    },
+    "protocol_handlers": {
+      "description": "A list of protocol handler definitions.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ProtocolHandler"
+      }
+    }
+  }
+}

@@ -4,8 +4,12 @@
   },
   "json.schemas": [
     {
-      "fileMatch": ["manifest.json"],
+      "fileMatch": ["/test/manifest.json"],
       "url": "./ffext.json"
+    },
+    {
+      "fileMatch": ["/test/test01.json"],
+      "url": "./test/testschema.json"
     }
   ],
 }
