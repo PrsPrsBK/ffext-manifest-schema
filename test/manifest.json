@@ -1,0 +1,61 @@
+{
+
+  "description": "test for JSON Schema",
+  "manifest_version": 2,
+  "name": "test manifest01",
+  "version": "0.1.0",
+  "homepage_url": "https://example.com/",
+  "applications": {
+    "gecko": {
+      "id": "test-ffext-manifest-schema@example.com"
+    }
+  },
+  "icons": {
+    "19": "icons/icon-19.png",
+    "48": "icons/icon-48.png"
+  },
+
+  "background": {
+    "scripts": [
+      "libs/foo.js",
+      "background/main.js",
+      "background/error.js"
+    ]
+  },
+
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": {
+      "48": "icons/icon-48.png"
+    },
+    "default_title": "test01",
+    "default_popup": "popup/menu.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://example.com/01",
+        "*://example.com/02"
+        ],
+      "js": ["content_scripts/example.js"]
+    },
+    {
+      "matches": ["https://www.example.com/*"],
+      "js": ["content_scripts/example.js"]
+    }
+  ],
+
+  "options_ui": {
+    "page": "options_ui/options.html"
+  },
+
+  "permissions": [
+    "clipboardWrite",
+    "tabs",
+    "storage",
+    "webRequest",
+    "<all_urls>"
+  ]
+
+}
