@@ -205,7 +205,7 @@ Both are in `License` directory.
 
 * 2021-02-06 No Update
 
-  * change: `nativeMessaging` became optional permission
+  * Change: `nativeMessaging` became optional permission
     [1630415](https://bugzilla.mozilla.org/show_bug.cgi?id=1630415)
 
 * 2021-03-18 0.20.0 New: `ftp` for `protocol_handlers`
@@ -214,10 +214,19 @@ Both are in `License` directory.
 
 * 2021-04-21 No Update
 
-  * change: docstring of `toolbar_field_separator` of `colors` of `ThemeType`
+  * Change: docstring of `toolbar_field_separator` of `colors` of `ThemeType`
     [1703590](https://bugzilla.mozilla.org/show_bug.cgi?id=1703590)
 
-* 2021-04-24 New: `matrix` scheme of `protocol` of `ProtocolHandler`
+* 2021-04-24 0.21.0 New: `matrix` scheme of `protocol` of `ProtocolHandler`
   [1688030](https://bugzilla.mozilla.org/show_bug.cgi?id=1688030)
+
+* 2021-05-02 No Update
+
+  * Change: `chrome_settings_overrides` - `search_provider.favicon_url` can be "strictRelativeUrl" on ManifestV3.
+    This has no effect because JSON Schema meta-spec (draft 7, and its validators) does not know Mozilla's "format"s.
+    [1697059](https://bugzilla.mozilla.org/show_bug.cgi?id=1697059)
+  * Change: `content_security_policy` has version specs(`max_manifest_version` and `min...`), but currently this Schema does not handle them.
+    Maybe [draft 7's `if-then-else`](https://json-schema.org/understanding-json-schema/reference/conditionals.html) resolves this.
+    [1696043](https://bugzilla.mozilla.org/show_bug.cgi?id=1696043)
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)

@@ -1048,10 +1048,12 @@
     "content_security_policy": {
       "oneOf": [
         {
+          "max_manifest_version": 2,
           "type": "string",
           "format": "contentSecurityPolicy"
         },
         {
+          "min_manifest_version": 3,
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/UnrecognizedProperty"
@@ -1348,8 +1350,17 @@
               "description": "preprocess: localize"
             },
             "favicon_url": {
-              "type": "string",
-              "format": "relativeUrl",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "relativeUrl",
+                  "max_manifest_version": 2
+                },
+                {
+                  "type": "string",
+                  "format": "strictRelativeUrl"
+                }
+              ],
               "description": "preprocess: localize"
             },
             "suggest_url": {
