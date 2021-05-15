@@ -229,4 +229,8 @@ Both are in `License` directory.
     Maybe [draft 7's `if-then-else`](https://json-schema.org/understanding-json-schema/reference/conditionals.html) resolves this.
     [1696043](https://bugzilla.mozilla.org/show_bug.cgi?id=1696043)
 
+* 2021-05-15 New: object `{ resources: [string], matches: [string] }` array for `web_accessible_resources` (ManifestV3)
+    [1696580](https://bugzilla.mozilla.org/show_bug.cgi?id=1696580)
+    [1697334](https://bugzilla.mozilla.org/show_bug.cgi?id=1697334)
+
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
