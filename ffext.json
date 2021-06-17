@@ -133,6 +133,7 @@
             "webNavigation",
             "webRequest",
             "bookmarks",
+            "action",
             "browser_action",
             "browsingData",
             "captivePortal",
@@ -874,6 +875,48 @@
         "$ref": "#/definitions/UnrecognizedProperty"
       }
     },
+    "ActionManifest": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/UnrecognizedProperty"
+      },
+      "properties": {
+        "default_title": {
+          "type": "string",
+          "description": "preprocess: localize"
+        },
+        "default_icon": {
+          "$ref": "#/definitions/IconPath"
+        },
+        "theme_icons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/ThemeIcons"
+          },
+          "description": "Specifies icons to use for dark and light themes"
+        },
+        "default_popup": {
+          "type": "string",
+          "format": "relativeUrl",
+          "description": "preprocess: localize"
+        },
+        "browser_style": {
+          "type": "boolean",
+          "default": false
+        },
+        "default_area": {
+          "description": "Defines the location the browserAction will appear by default.  The default location is navbar.",
+          "type": "string",
+          "enum": [
+            "navbar",
+            "menupanel",
+            "tabstrip",
+            "personaltoolbar"
+          ]
+        }
+      }
+    },
     "KeyName": {
       "type": "string",
       "format": "manifestShortcutKey"
@@ -1290,47 +1333,13 @@
         "$ref": "#/definitions/UnrecognizedProperty"
       }
     },
+    "action": {
+      "min_manifest_version": 3,
+      "$ref": "#/definitions/ActionManifest"
+    },
     "browser_action": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "#/definitions/UnrecognizedProperty"
-      },
-      "properties": {
-        "default_title": {
-          "type": "string",
-          "description": "preprocess: localize"
-        },
-        "default_icon": {
-          "$ref": "#/definitions/IconPath"
-        },
-        "theme_icons": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/ThemeIcons"
-          },
-          "description": "Specifies icons to use for dark and light themes"
-        },
-        "default_popup": {
-          "type": "string",
-          "format": "relativeUrl",
-          "description": "preprocess: localize"
-        },
-        "browser_style": {
-          "type": "boolean",
-          "default": false
-        },
-        "default_area": {
-          "description": "Defines the location the browserAction will appear by default.  The default location is navbar.",
-          "type": "string",
-          "enum": [
-            "navbar",
-            "menupanel",
-            "tabstrip",
-            "personaltoolbar"
-          ]
-        }
-      }
+      "max_manifest_version": 2,
+      "$ref": "#/definitions/ActionManifest"
     },
     "chrome_settings_overrides": {
       "type": "object",
