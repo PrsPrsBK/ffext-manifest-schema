@@ -233,4 +233,10 @@ Both are in `License` directory.
     [1696580](https://bugzilla.mozilla.org/show_bug.cgi?id=1696580)
     [1697334](https://bugzilla.mozilla.org/show_bug.cgi?id=1697334)
 
+* 2021-06-17 Rename: `browserAction` API to `action` API only on Manifest V3.
+  On Manifest V2, `browserAction` API still remains.
+  **This schema file does not handle whether Manifest V is 2 or 3.**
+  So, the properties of both API are available.
+  [1706398](https://bugzilla.mozilla.org/show_bug.cgi?id=1706398)
+
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
