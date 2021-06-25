@@ -239,4 +239,7 @@ Both are in `License` directory.
   So, the properties of both API are available.
   [1706398](https://bugzilla.mozilla.org/show_bug.cgi?id=1706398)
 
+* 2021-06-25 New: `extensions` array for `web_accessible_resources` (ManifestV3)
+  [1711168](https://bugzilla.mozilla.org/show_bug.cgi?id=1711168)
+
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
