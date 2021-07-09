@@ -229,17 +229,20 @@ Both are in `License` directory.
     Maybe [draft 7's `if-then-else`](https://json-schema.org/understanding-json-schema/reference/conditionals.html) resolves this.
     [1696043](https://bugzilla.mozilla.org/show_bug.cgi?id=1696043)
 
-* 2021-05-15 New: object `{ resources: [string], matches: [string] }` array for `web_accessible_resources` (ManifestV3)
+* 2021-05-15 0.22.0 New: object `{ resources: [string], matches: [string] }` array for `web_accessible_resources` (ManifestV3)
     [1696580](https://bugzilla.mozilla.org/show_bug.cgi?id=1696580)
     [1697334](https://bugzilla.mozilla.org/show_bug.cgi?id=1697334)
 
-* 2021-06-17 Rename: `browserAction` API to `action` API only on Manifest V3.
+* 2021-06-17 0.23.0 Rename: `browserAction` API to `action` API only on Manifest V3.
   On Manifest V2, `browserAction` API still remains.
   **This schema file does not handle whether Manifest V is 2 or 3.**
   So, the properties of both API are available.
   [1706398](https://bugzilla.mozilla.org/show_bug.cgi?id=1706398)
 
-* 2021-06-25 New: `extensions` array for `web_accessible_resources` (ManifestV3)
+* 2021-06-25 0.24.0 New: `extensions` array for `web_accessible_resources` (ManifestV3)
+  [1711168](https://bugzilla.mozilla.org/show_bug.cgi?id=1711168)
+
+* 2021-07-08 0.25.0 Removed(0.24.0): : `extensions` array for `web_accessible_resources` (ManifestV3)
   [1711168](https://bugzilla.mozilla.org/show_bug.cgi?id=1711168)
 
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
