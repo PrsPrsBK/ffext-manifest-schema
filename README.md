@@ -248,4 +248,9 @@ Both are in `License` directory.
 * 2021-07-26 0.26.0 New: `host_permissions` for ManifestV3
   [1693385](https://bugzilla.mozilla.org/show_bug.cgi?id=1693385)
 
+* 2021-08-27 No Update
+
+  * New: `resetScrollPosition` property of argument of `captureTab()` and `captureVisibleTab()` of `tabs` API.
+    [1708403](https://bugzilla.mozilla.org/show_bug.cgi?id=1708403)
+
 [//]: # (vim:expandtab ff=unix fenc=utf-8 sw=2)
